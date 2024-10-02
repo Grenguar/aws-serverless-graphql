@@ -1,14 +1,25 @@
-# Welcome to your CDK TypeScript project
+# Serverless GraphQL with AppSync and Resolvers
 
-This is a blank project for CDK development with TypeScript.
+This project shows how to build GraphQL application without a need for traditional Lambda functions.
+More information you could read in [my blog post about AppSync](https://www.soroka.tech/blog/graphql-serverless-appsync).
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+It is using AppSync, DynamoDB and EventBridge.
+
+How one could do operations on datasources:
+- CDK templates
+- AppSync JavaScript Resolvers
+
+## Structure
+- `lib/appsync-demo-community-stack.ts` - has the CDK code for the application
+- `resolvers` - this folder contains the JS resolvers for the operations
+- `schema/books.graphql` - GraphQL schema for the project
+- `graphql_queries.md` - examples of queries
 
 ## Useful commands
-
+* `npx cdk bootstrap` this the command to prepare your AWS account to the CDK applications by region
 * `npm run build`   compile typescript to js
-* `npm run watch`   watch for changes and compile
-* `npm run test`    perform the jest unit tests
 * `npx cdk deploy`  deploy this stack to your default AWS account/region
-* `npx cdk diff`    compare deployed stack with current state
 * `npx cdk synth`   emits the synthesized CloudFormation template
+
+## Follow me on LinkedIn
+- [My profile](https://bit.ly/soroka-linkedin)

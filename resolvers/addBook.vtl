@@ -1,0 +1,16 @@
+#set($input = $ctx.args.input)
+
+#if($input.id)
+#set($bookId = $input.id)
+#else
+#set($bookId = $util.autoId())
+#end
+
+{
+    "version": "2017-02-28",
+    "operation": "PutItem",
+    "key": {
+        "id": $util.dynamodb.toDynamoDBJson($bookId)
+    },
+    "attributeValues": $util.dynamodb.toMapValuesJson($input)
+}
